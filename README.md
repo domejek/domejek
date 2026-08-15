@@ -37,17 +37,3 @@
 | [DomJek-QuarkusCalculator](https://github.com/domejek/DomJek-QuarkusCalculator) | Mittelwert/Abweichung, Persistenz in InfluxDB | `Java` `Quarkus` |
 | [DomJek-LaravelREST](https://github.com/domejek/DomJek-LaravelREST) | REST-API mit CRUD & Auth | `PHP` `Laravel` |
 | [DomJek-RealTimeMonitoring](https://github.com/domejek/DomJek-RealTimeMonitoring) | Echtzeit-Monitoring-System | `Node.js` `PostgreSQL` |
-
-## Zuletzt aktiv
-
-<!--START_SECTION:recent-repos-->
-<!--END_SECTION:recent-repos-->
-
-<sub>Automatisch aktualisiert per GitHub Action (täglich + bei Push) — [Workflow](.github/workflows/update-readme.yml)</sub>
-
----
-
-<div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=domejek&show_icons=true&theme=default&hide_border=true&count_private=true" alt="GitHub Stats" height="150"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=domejek&layout=compact&hide_border=true&langs_count=7" alt="Top Languages" height="150"/>
-</div>
