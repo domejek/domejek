@@ -1,0 +1,40 @@
+name: README aktualisieren
+
+on:
+  schedule:
+    # Täglich um 05:00 UTC (07:00 Uhr Sommerzeit / 06:00 Uhr Winterzeit in DE)
+    - cron: "0 5 * * *"
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Neueste Repository-Aktivität abrufen und README aktualisieren
+        env:
+          GH_USERNAME: domejek
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/update_readme.py
+
+      - name: Änderungen committen, falls vorhanden
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: README automatisch aktualisiert 🤖"
+          file_pattern: README.md
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
